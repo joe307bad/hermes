@@ -27,6 +27,7 @@ model =
 
 type Random
     = RandomFunction Int String
+    | AnotherThing
     | AnotherRandomThing
 
 
@@ -35,9 +36,12 @@ randomThing randomFunctionCase =
     "blah"
 
 
-randomFunctionCase : Int -> String -> String
+randomFunctionCase : Random -> String -> String
 randomFunctionCase thisInt thisString =
     case thisInt of
+        AnotherThing ->
+            "another"
+
         _ ->
             "heythere"
 
@@ -61,10 +65,21 @@ update msg model =
 -- VIEW
 
 
+view1 : Model -> Html Random
+view1 model =
+    div []
+        [ button [ onClick AnotherThing ] [ text "-" ]
+        , div [] [ text (toString model) ]
+        , button [ onClick AnotherThing ] [ text "+sadasd" ]
+        , div [ onClick AnotherThing ] [ text "hey" ]
+        ]
+
+
 view : Model -> Html Msg
 view model =
     div []
         [ button [ onClick Decrement ] [ text "-" ]
         , div [] [ text (toString model) ]
         , button [ onClick Increment ] [ text "+sadasd" ]
+        , div [] [ text "hey" ]
         ]
