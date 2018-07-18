@@ -1,36 +1,70 @@
+module Main exposing (..)
+
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
 
+
 main =
-  Html.beginnerProgram { model = model, view = view, update = update }
+    Html.beginnerProgram { model = model, view = view, update = update }
+
+
 
 -- MODEL
 
-type alias Model = Int
+
+type alias Model =
+    Int
+
 
 model : Model
 model =
-  0
+    0
+
+
 
 -- UPDATE
 
-type Msg = Increment | Decrement
+
+type Random
+    = RandomFunction Int String
+    | AnotherRandomThing
+
+
+randomThing : Random -> String
+randomThing randomFunctionCase =
+    "blah"
+
+
+randomFunctionCase : Int -> String -> String
+randomFunctionCase thisInt thisString =
+    case thisInt of
+        _ ->
+            "heythere"
+
+
+type Msg
+    = Increment
+    | Decrement
+
 
 update : Msg -> Model -> Model
 update msg model =
-  case msg of
-    Increment ->
-      model + 1
+    case msg of
+        Increment ->
+            model + 1
 
-    Decrement ->
-      model - 1
+        Decrement ->
+            model - 1
+
+
 
 -- VIEW
 
+
 view : Model -> Html Msg
 view model =
-  div []
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (toString model) ]
-    , button [ onClick Increment ] [ text "+sadasd" ]
-    ]
+    div []
+        [ button [ onClick Decrement ] [ text "-" ]
+        , div [] [ text (toString model) ]
+        , button [ onClick Increment ] [ text "+sadasd" ]
+        ]
