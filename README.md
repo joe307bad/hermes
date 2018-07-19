@@ -1,6 +1,5 @@
 ## BadaDash
 ### Dashboard of personal content and self-specific functionalty to increase my productivity and organize/analyze various data
----
 
 ### ToDos:
 - [ ] Update flow to record prices of bills
