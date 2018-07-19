@@ -5,9 +5,10 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Http
 import Json.Decode as Decode
-import Finances.Main exposing (MonthUtilities, bills)
-import Finances.Types.Utility exposing (Utility, utilityToString)
-import Finances.Types.Month exposing (Month, enumMonth, monthToString)
+import Finances.Main exposing (FinancesModel)
+import Finances.Data.Bills exposing (bills)
+import Finances.View exposing (financesTable)
+import Shared.Types.Msg exposing (Msg)
 
 
 -- APP
@@ -37,32 +38,21 @@ subscriptions model =
 
 
 type alias Model =
-    { jokes : List String }
+    { finances : FinancesModel }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( Model [ "354" ], Cmd.none )
+    ( Model bills, Cmd.none )
 
 
 
 -- UPDATE
 
 
-type Msg
-    = FindJoke
-    | NewJoke (Result Http.Error String)
-
-
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        FindJoke ->
-            ( model, getRandomJoke )
-
-        NewJoke (Ok joke) ->
-            ( { model | jokes = joke :: model.jokes }, Cmd.none )
-
         _ ->
             Model [] ! []
 
@@ -75,46 +65,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ header
-        , financesTable model
-        ]
-
-
-billsRow : Month -> Html Msg
-billsRow month =
-    tr []
-        (List.concat
-            [ [ td [] [ text (monthToString month) ] ]
-            , (List.map (\utility -> (td [] [ text (utilityToString utility) ])) (listOfUtiliiesForMonth month))
-            , [ td [] [ text "123" ] ]
-            ]
-        )
-
-
-monthsUtilities : Month -> List MonthUtilities
-monthsUtilities month =
-    List.filter (\bill -> bill.month == month) bills
-
-
-listOfUtiliiesForMonth : Month -> List Utility
-listOfUtiliiesForMonth month =
-    List.concat (List.map (\mUtils -> mUtils.utilities) (monthsUtilities month))
-
-
-financesTable : Model -> Html Msg
-financesTable model =
-    table [ class "striped" ]
-        [ thead []
-            [ tr []
-                [ th [] [ text "Bill" ]
-                , th [] [ text "Electric" ]
-                , th [] [ text "Gas" ]
-                , th [] [ text "Water/Sewege" ]
-                , th [] [ text "Cable" ]
-                , th [] [ text "Phone" ]
-                , th [] [ text "Total" ]
-                ]
-            ]
-        , tbody [] (List.map (\month -> (billsRow month)) enumMonth)
+        , financesTable model.finances
         ]
 
 
@@ -124,9 +75,7 @@ header =
         [ nav [ class "blue lighten-2" ]
             [ div [ class "nav-wrapper container" ]
                 [ a [ href "#", class "brand-logo" ] [ text "BadaDash" ]
-                , ul [ id "nav-mobile", class "right hide-on-med-and-down" ]
-                    [ li [] [ a [ onClick FindJoke ] [ text "Joke" ] ]
-                    ]
+                , ul [ id "nav-mobile", class "right hide-on-med-and-down" ] []
                 ]
             ]
         ]
@@ -157,18 +106,18 @@ jokeSection jokes =
 -- REQUESTS
 
 
-{-| Request a random joke from the Chuck Norris Database.
--}
-getRandomJoke : Cmd Msg
-getRandomJoke =
-    let
-        url =
-            "https://api.icndb.com/jokes/random"
+-- {-| Request a random joke from the Chuck Norris Database.
+-- -}
+-- getRandomJoke : Cmd Msg
+-- getRandomJoke =
+--     let
+--         url =
+--             "https://api.icndb.com/jokes/random"
 
-        request =
-            Http.get url decodeJoke
-    in
-        Http.send NewJoke request
+--         request =
+--             Http.get url decodeJoke
+--     in
+--         Http.send NewJoke request
 
 
 {-| Given a response from the Chuck Norris Database, for instance:
