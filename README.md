@@ -18,5 +18,5 @@
 * Locations tracker (consecutive days at the gym)
 * Work travel times
 
-## Why Hermes?
-The Bada household's very own digital, (beloved bureaucrat)[https://en.wikipedia.org/wiki/Hermes_Conrad]
+#### Why Hermes?
+The Bada household's very own digital, [beloved bureaucrat](https://en.wikipedia.org/wiki/Hermes_Conrad)
