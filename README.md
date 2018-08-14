@@ -1,4 +1,4 @@
-## BadaDash
+## Hermes
 ### Dashboard of personal content and self-specific functionalty to increase my productivity and organize/analyze various data
 
 ### ToDos:
@@ -17,3 +17,6 @@
 * Xbox friend activity
 * Locations tracker (consecutive days at the gym)
 * Work travel times
+
+## Why Hermes?
+The Bada household's very own digital, (beloved bureaucrat)[https://en.wikipedia.org/wiki/Hermes_Conrad]
