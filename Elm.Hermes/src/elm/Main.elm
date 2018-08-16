@@ -61,7 +61,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ header
-        , Finances.financesTable
+        , Finances.view
         ]
 
 
@@ -72,20 +72,6 @@ header =
             [ div [ class "nav-wrapper container" ]
                 [ a [ href "#", class "brand-logo" ] [ text "BadaDash" ]
                 , ul [ id "nav-mobile", class "right hide-on-med-and-down" ] []
-                ]
-            ]
-        ]
-
-
-{-| Displays text in form of a card by Materialize.
--}
-toCard : String -> Html Msg
-toCard content =
-    div [ class "row container" ]
-        [ div [ class "col s8 offset-s2" ]
-            [ div [ class "card blue-grey darken-1" ]
-                [ div [ class "card-content white-text center" ]
-                    [ p [] [ text content ] ]
                 ]
             ]
         ]

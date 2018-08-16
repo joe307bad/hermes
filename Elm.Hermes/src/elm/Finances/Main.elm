@@ -1,16 +1,22 @@
 module Finances.Main exposing (..)
+
 import Html exposing (..)
 import Shared.Types.Msg exposing (Msg)
-
-import Finances.Types.MonthUtilities exposing(MonthUtilities)
-import Finances.Data.Bills as FinancesData
+import Finances.Types.Main exposing (MonthUtilities)
+import Finances.Data.Main as FinancesData
+import Finances.Model as FinancesModel
 import Finances.View as FinancesView
-import Finances.Data.Model as FinancesModel
+
 
 bills : List MonthUtilities
-bills = FinancesData.bills
+bills =
+    FinancesData.bills
 
-financesTable : Html Msg
-financesTable = FinancesView.financesTable FinancesData.bills
 
-type alias Model = FinancesModel.FinancesModel
+view : Html Msg
+view =
+    FinancesView.financesTable FinancesData.bills
+
+
+type alias Model =
+    FinancesModel.Model

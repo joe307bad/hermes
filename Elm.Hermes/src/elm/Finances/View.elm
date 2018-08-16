@@ -2,26 +2,26 @@ module Finances.View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Finances.Types.MonthUtilities exposing (MonthUtilities)
-import Finances.Types.Utility exposing (Utility, utilityToString)
-import Finances.Types.Month exposing (Month, enumMonth, monthToString)
-import Finances.Data.Bills exposing (bills)
-import Finances.Data.Model exposing (FinancesModel)
+
+import Finances.Types.Main as FinancesTypes
+import Finances.Data.Main as FinancesData
+import Finances.Model as FinancesModel
+
 import Shared.Types.Msg exposing (Msg)
 
     
-billsRow : Month -> Html Msg
+billsRow : FinancesTypes.Month -> Html Msg
 billsRow month =
     tr []
         (List.concat
-            [ [ td [] [ text (monthToString month) ] ]
+            [ [ td [] [ text (FinancesTypes.monthToString month) ] ]
             , (List.map (\utility -> (td [] [ billTextBox month ])) (listOfUtiliiesForMonth month))
             , [ td [] [ text "123" ] ]
             ]
         )
 
 
-billTextBox : Month -> Html Msg
+billTextBox : FinancesTypes.Month -> Html Msg
 billTextBox month =
     div [ class "input-field" ]
         [ i [ class "material-icons prefix" ] [ text "attach_money" ]
@@ -30,17 +30,17 @@ billTextBox month =
         ]
 
 
-monthsUtilities : Month -> List MonthUtilities
+monthsUtilities : FinancesTypes.Month -> List FinancesTypes.MonthUtilities
 monthsUtilities month =
-    List.filter (\bill -> bill.month == month) bills
+    List.filter (\bill -> bill.month == month) FinancesData.bills
 
 
-listOfUtiliiesForMonth : Month -> List Utility
+listOfUtiliiesForMonth : FinancesTypes.Month -> List FinancesTypes.Utility
 listOfUtiliiesForMonth month =
     List.concat (List.map (\mUtils -> mUtils.utilities) (monthsUtilities month))
 
 
-financesTable : FinancesModel -> Html Msg
+financesTable : FinancesModel.Model -> Html Msg
 financesTable model =
     table [ class "striped" ]
         [ thead []
@@ -54,5 +54,5 @@ financesTable model =
                 , th [] [ text "Total" ]
                 ]
             ]
-        , tbody [] (List.map (\month -> (billsRow month)) enumMonth)
+        , tbody [] (List.map (\month -> (billsRow month)) FinancesTypes.enumMonth)
         ]
