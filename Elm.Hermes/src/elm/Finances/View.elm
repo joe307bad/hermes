@@ -2,13 +2,14 @@ module Finances.View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Finances.Main exposing (FinancesModel)
 import Finances.Types.MonthUtilities exposing (MonthUtilities)
 import Finances.Types.Utility exposing (Utility, utilityToString)
 import Finances.Types.Month exposing (Month, enumMonth, monthToString)
 import Finances.Data.Bills exposing (bills)
+import Finances.Data.Model exposing (FinancesModel)
 import Shared.Types.Msg exposing (Msg)
 
+    
 billsRow : Month -> Html Msg
 billsRow month =
     tr []

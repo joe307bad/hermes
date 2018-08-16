@@ -2,12 +2,8 @@ module Main exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
-import Http
-import Json.Decode as Decode
-import Finances.Main exposing (FinancesModel)
-import Finances.Data.Bills exposing (bills)
-import Finances.View exposing (financesTable)
+
+import Finances.Main as Finances
 import Shared.Types.Msg exposing (Msg)
 
 
@@ -38,12 +34,12 @@ subscriptions model =
 
 
 type alias Model =
-    { finances : FinancesModel }
+    { finances : Finances.Model }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( Model bills, Cmd.none )
+    ( Model Finances.bills, Cmd.none )
 
 
 
@@ -65,7 +61,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ header
-        , financesTable model.finances
+        , Finances.financesTable
         ]
 
 
@@ -93,39 +89,3 @@ toCard content =
                 ]
             ]
         ]
-
-
-{-| Provides section to show jokes saved in model.
--}
-jokeSection : List String -> Html Msg
-jokeSection jokes =
-    section [] [ div [] (List.map toCard <| jokes) ]
-
-
-
--- REQUESTS
-
-
--- {-| Request a random joke from the Chuck Norris Database.
--- -}
--- getRandomJoke : Cmd Msg
--- getRandomJoke =
---     let
---         url =
---             "https://api.icndb.com/jokes/random"
-
---         request =
---             Http.get url decodeJoke
---     in
---         Http.send NewJoke request
-
-
-{-| Given a response from the Chuck Norris Database, for instance:
-{ "value": { "id": 527, "joke": "No one has ever lived to tell about it." } }
-
-This function retrieves the value of "joke" attribute.
-
--}
-decodeJoke : Decode.Decoder String
-decodeJoke =
-    Decode.at [ "value", "joke" ] Decode.string
