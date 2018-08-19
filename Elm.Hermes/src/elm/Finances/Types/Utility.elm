@@ -1,4 +1,4 @@
-module Finances.Types.Utility exposing (..)
+module Finances.Types.Utility exposing (Utility, utilityToString, enumUtility)
 
 
 type Utility

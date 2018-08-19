@@ -1,4 +1,4 @@
-module Finances.Types.Month exposing (..)
+module Finances.Types.Month exposing (Month, monthToString, enumMonth)
 
 
 type Month

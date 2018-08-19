@@ -2,15 +2,18 @@ module View exposing (root)
 
 import Html exposing (Html, button, div, text, nav, a, ul)
 import Html.Attributes exposing (id, class, href)
-import Finances.View exposing (root)
+
 import Types exposing (Model, Msg)
+
+import Finances.View exposing (root)
+import Finances.Types exposing (bills)
 
 
 root : Model -> Html Msg
 root model =
     div []
         [ header
-        , Finances.View.root model
+        , Finances.View.root bills
         ]
 
 
