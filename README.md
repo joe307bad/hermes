@@ -12,11 +12,15 @@
 * Finances (bill records, averages)
 * ToDos (task, dates, notifications, daily goals)
 * Pingdom stats (days of uptime, % uptime, longest streak of uptime)
-* Server stats (remaining space, running containers, current downloads)
+* Server stats (remaining space, running containers, current downloads, trigger downloads, complete notifications)
 * Home Automation
 * Xbox friend activity
 * Locations tracker (consecutive days at the gym)
 * Work travel times
+* Goals (Habitca clone)
+
+### Resources:
+* Structure: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html
 
 #### Why Hermes?
 The Bada household's very own digital, [beloved bureaucrat](https://en.wikipedia.org/wiki/Hermes_Conrad)
