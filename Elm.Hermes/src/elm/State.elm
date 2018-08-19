@@ -1,6 +1,6 @@
 module State exposing (initialState, update, subscriptions)
 
-import Types exposing (..)
+import Types exposing (Model, Msg, initialModel)
 
 
 initialState : ( Model, Cmd Msg )

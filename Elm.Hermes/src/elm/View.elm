@@ -1,14 +1,26 @@
-module View exposing (..)
+module View exposing (root)
 
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
+import Html exposing (Html, button, div, text, nav, a, ul)
+import Html.Attributes exposing (id, class, href)
+import Finances.View exposing (root)
+import Types exposing (Model, Msg)
 
-import Types exposing (..)
 
 root : Model -> Html Msg
 root model =
-  div []
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (toString model) ]
-    , button [ onClick Increment ] [ text "+" ]
-    ]
+    div []
+        [ header
+        , Finances.View.root model
+        ]
+
+
+header : Html Msg
+header =
+    div [ class "navbar-fixed scrollspy" ]
+        [ nav [ class "blue lighten-2" ]
+            [ div [ class "nav-wrapper container" ]
+                [ a [ href "#", class "brand-logo" ] [ text "BadaDash" ]
+                , ul [ id "nav-mobile", class "right hide-on-med-and-down" ] []
+                ]
+            ]
+        ]
