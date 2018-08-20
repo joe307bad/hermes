@@ -1,4 +1,4 @@
-module Finances.Types exposing (Model, MonthUtilities, initialModel, bills)
+module Finances.Types exposing (Model, Msg, MonthUtilities, initialModel, bills)
 
 import Finances.Types.Month exposing (Month, enumMonth)
 import Finances.Types.Utility exposing (Utility, enumUtility)
@@ -14,6 +14,11 @@ type alias Model =
 initialModel : Model
 initialModel =
     bills
+
+
+type Msg
+    = Increment
+    | Decrement
 
 
 bills : List MonthUtilities
