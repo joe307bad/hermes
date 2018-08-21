@@ -19,6 +19,10 @@
 * Work travel times
 * Goals (Habitca clone)
 
+## Potential Native App Functionality:
+* Location tracking
+* Version for friends/family to notify of new plex additions and planned downtime
+
 ### Resources:
 * Structure: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html
 
