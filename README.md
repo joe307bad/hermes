@@ -19,7 +19,7 @@
 * Work travel times
 * Goals (Habitca clone)
 
-## Potential Native App Functionality:
+### Potential Native App Functionality:
 * Location tracking
 * Version for friends/family to notify of new plex additions and planned downtime
 
