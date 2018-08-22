@@ -7,6 +7,7 @@
 - [ ] Split project into Client/API sections
 - [ ] Experiment with creating Phoenix/GraphQL docker contaienr API
 - [ ] Implement routing for different sections (Finances, Home Automation, To Dos)
+- [ ] Investigate using  elm-static-html-lib (which may make using phoenix impossible)
 
 ### Potential Functionality:
 * Finances (bill records, averages)
