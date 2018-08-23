@@ -25,7 +25,7 @@
 * Version for friends/family to notify of new plex additions and planned downtime
 * Random stuff like untappd comparisons?
 
-## Data Tier Features:
+### Data Tier Features:
 * Time series database https://github.com/influxdata/influxdb
 
 ### Resources:
