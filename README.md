@@ -25,6 +25,9 @@
 * Version for friends/family to notify of new plex additions and planned downtime
 * Random stuff like untappd comparisons?
 
+## Data Tier Features:
+* Time series database
+
 ### Resources:
 * Structure: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html
 
