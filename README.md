@@ -26,7 +26,7 @@
 * Random stuff like untappd comparisons?
 
 ## Data Tier Features:
-* Time series database
+* Time series database https://github.com/influxdata/influxdb
 
 ### Resources:
 * Structure: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html
