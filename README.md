@@ -19,6 +19,7 @@
 * Locations tracker (consecutive days at the gym)
 * Work travel times
 * Goals (Habitca clone)
+* Track releases of github repos
 
 ### Potential Native App Functionality:
 * Location tracking
