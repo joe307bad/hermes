@@ -20,6 +20,7 @@
 * Work travel times
 * Goals (Habitca clone)
 * Track releases of github repos
+* Download manager (something that consumes file URLs and downloads them to JBHS)
 
 ### Potential Native App Functionality:
 * Location tracking
