@@ -23,6 +23,7 @@
 * Download manager (something that consumes file URLs and downloads them to JBHS)
 
 ### Potential Native App Functionality:
+* Base off of [this starter](https://github.com/ueno-llc/react-native-starter) and implement CI, tests, etc.
 * Location tracking
 * Version for friends/family to notify of new plex additions and planned downtime
 * Random stuff like untappd comparisons?
