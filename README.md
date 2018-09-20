@@ -27,6 +27,7 @@
 * Location tracking
 * Version for friends/family to notify of new plex additions and planned downtime
 * Random stuff like untappd comparisons?
+* Geofencing to do actions when close to the house, gym, HBG home, etc.
 
 ### Data Tier Features:
 * Time series database https://github.com/influxdata/influxdb
