@@ -24,13 +24,15 @@
 
 ### Potential Native App Functionality:
 * Base off of [this starter](https://github.com/ueno-llc/react-native-starter) and implement CI, tests, etc.
+  * Maybe use ReasonML bindings for RN
 * Location tracking
 * Version for friends/family to notify of new plex additions and planned downtime
 * Random stuff like untappd comparisons?
 * Geofencing to do actions when close to the house, gym, HBG home, etc.
 
 ### Data Tier Features:
-* Time series database https://github.com/influxdata/influxdb
+* [Time series database](https://github.com/influxdata/influxdb)
+* [MemSQL](https://www.memsql.com/)
 
 ### Resources:
 * Structure: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html
