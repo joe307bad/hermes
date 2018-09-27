@@ -5,7 +5,8 @@
 - [ ] Update flow to record prices of bills
 - [ ] Update flow to average prices of bills and average of totals
 - [ ] Split project into Client/API sections
-- [ ] Experiment with creating Phoenix/GraphQL docker contaienr API
+- [ ] Experiment with creating Phoenix/GraphQL docker container API
+- [ ] Implement [Swagger for Pheonix](https://github.com/xerions/phoenix_swagger)
 - [ ] Implement routing for different sections (Finances, Home Automation, To Dos)
 - [ ] Investigate using  elm-static-html-lib (which may make using phoenix impossible)
 
