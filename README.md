@@ -5,6 +5,7 @@
 - [ ] Update flow to record prices of bills
 - [ ] Update flow to average prices of bills and average of totals
 - [ ] Split project into Client/API sections
+  * I dont think this is a good idea. There should be seperate repos for Client, API, Native, etc.
 - [ ] Experiment with creating Phoenix/GraphQL docker container API
 - [ ] Implement [Swagger for Pheonix](https://github.com/xerions/phoenix_swagger)
 - [ ] Implement routing for different sections (Finances, Home Automation, To Dos)
