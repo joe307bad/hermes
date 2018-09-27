@@ -11,6 +11,8 @@
 - [ ] Investigate using  elm-static-html-lib (which may make using phoenix impossible)
 
 ### Potential Functionality:
+* Goals (Habitca clone)
+  * This may be good to start out with because it is essentially a CRUD example
 * Finances (bill records, averages)
 * ToDos (task, dates, notifications, daily goals)
 * Pingdom stats (days of uptime, % uptime, longest streak of uptime)
@@ -19,7 +21,6 @@
 * Xbox friend activity
 * Locations tracker (consecutive days at the gym)
 * Work travel times
-* Goals (Habitca clone)
 * Track releases of github repos
 * Download manager (something that consumes file URLs and downloads them to JBHS)
 
