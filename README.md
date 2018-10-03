@@ -10,6 +10,7 @@
 - [ ] Implement [Swagger for Pheonix](https://github.com/xerions/phoenix_swagger)
 - [ ] Implement routing for different sections (Finances, Home Automation, To Dos)
 - [ ] Investigate using  elm-static-html-lib (which may make using phoenix impossible)
+- [ ] Implement CI/CD with [ChronoCI](https://www.chronoci.com/)
 
 ### Potential Functionality:
 * Goals (Habitca clone)
